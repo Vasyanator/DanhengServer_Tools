@@ -19,6 +19,7 @@ main = {
     'tab_mazes': "Mazes",
     'tab_avatars': "Avatars",
     'tab_commands': "Commands",
+    'tab_rogue': "Rogue buffs",
     'tab_opencommand_plugin': "OpenCommand Plugin",
     'autocopy_label': "Autocopy",
     'copy_button_label': "Copy",
@@ -146,6 +147,54 @@ commands_tab = {
     "Delete": "Delete",
     "Error": "Error",
     "Warning": "Warning",
+}
+
+rogue_buffs_tab = {
+    "RogueBuffs": "Rogue Buffs",
+    "Virtual_Universe_Blessings": "Simulated Universe Blessings",
+    "Search": "Search",
+    "Category": "Category",
+    "Type": "Type",
+    "Rarity": "Rarity",
+    "Search_Button": "Search",
+    "Get_Blessing": "Get Blessing",
+    "Warning": "Warning",
+    "No_blessing_selected": "No blessing selected.",
+    # Categories
+    "basic su": "Basic SU",
+    "divergent su": "Divergent SU",
+    "equations": "Equations",
+    "infinite blessings": "Infinite Blessings",
+    "resonance deployments": "Resonance Deployments",
+    "unknown": "Unknown",
+    # Types
+    "Preservation": "Preservation",
+    "Memory": "Memory",
+    "Nonexistence": "Nonexistence",
+    "Abundance": "Abundance",
+    "Hunting": "Hunting",
+    "Destruction": "Destruction",
+    "Joy": "Joy",
+    "Spreading": "Spreading",
+    "Erudition": "Erudition",
+    "Unknown": "Unknown",
+    # Rarities
+    "Mythic": "Mythic",
+    "Legendary": "Legendary",
+    "Rare": "Rare",
+    "Common": "Common",
+    "Unknown": "Unknown",
+    
+    "Enhance_Selected": "Enhance Selected",
+    "Enhance_All": "Enhance All",
+    "Virtual_Universe_Miracles": "Simulated Universe Miracles",
+    "Get_Miracle": "Get Miracle",
+    "No_miracle_selected": "No miracle selected.",
+    # Miracle Categories
+    "infinite": "Infinite",
+    "unidentified area": "Unidentified Area",
+    'basic su' : "basic su",
+    'divergent su' : "divergent su",
 }
 
 opencommand_tab = {
