@@ -15,11 +15,12 @@ import tab_items
 #import tab_spawn
 #import tab_mazes
 import tab_avatars
+import tab_rogue_buffs.rogue_buffs_main as rogue_buffs_main
 #import tab_commands
 import tab_opencommand
 
 program_name = "DanghengServer Tools"
-program_version = "V0.5"
+program_version = "V0.6"
 
 def load_localization():
     lang, encoding = pylocale.getdefaultlocale()
@@ -36,6 +37,7 @@ def main():
     planars_tab_locale = localization.planars_tab
     avatars_tab_locale = localization.avatars_tab
     items_tab_locale = localization.items_tab
+    rogue_buffs_tab_locale = localization.rogue_buffs_tab
     spawn_tab_locale = localization.spawn_tab
     mazes_tab_locale = localization.mazes_tab
     commands_tab_locale = localization.commands_tab
@@ -104,9 +106,16 @@ def main():
             root.destroy()
 
     # Process the file
-    handbook_data = process_handbook(filename)
+    handbook_data = process_handbook(filename, program_version)
     avatars_list = handbook_data.avatars_list
     relics_list = handbook_data.relics_list
+    rogue_buffs_su = handbook_data.rogue_buffs_su
+    rogue_buffs_food = handbook_data.rogue_buffs_food
+    rogue_buffs_various = handbook_data.rogue_buffs_various
+    rogue_buffs_from_entities = handbook_data.rogue_buffs_from_entities
+    rogue_buffs_other = handbook_data.rogue_buffs_other
+    rogue_buffs_unknown = handbook_data.rogue_buffs_unknown
+    rogue_miracles = handbook_data.rogue_miracles
     # props_list = handbook_data.props_list
     # npc_monsters_list = handbook_data.npc_monsters_list
     # battle_stages = handbook_data.battle_stages
@@ -155,6 +164,22 @@ def main():
     )
     notebook.add(items_tab.frame, text=main_locale['tab_items'])
     tabs.append(items_tab)
+
+    rogue_tab = rogue_buffs_main.RogueBuffsTab(
+        notebook, 
+        rogue_buffs_su=rogue_buffs_su,
+        rogue_buffs_food=rogue_buffs_food,
+        rogue_buffs_various=rogue_buffs_various,
+        rogue_buffs_from_entities=rogue_buffs_from_entities,
+        rogue_buffs_other=rogue_buffs_other,
+        rogue_buffs_unknown=rogue_buffs_unknown,
+        rogue_miracles=rogue_miracles,
+        command_manager=command_manager,
+        localization=rogue_buffs_tab_locale,
+        
+        )
+    notebook.add(rogue_tab.frame, text=main_locale['tab_rogue'])
+    tabs.append(rogue_tab)
 
     # Spawn Tab
    # spawn_tab = tab_spawn.SpawnTab(
